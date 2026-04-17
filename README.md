@@ -224,27 +224,6 @@ POST /api/notifications
 GET  /api/notifications/:userId
 ```
 
-## Screenshots
-
-Add screenshots here after running the app locally.
-
-Suggested screenshots:
-
-- Login page
-- Register page
-- Dashboard with charts
-- Submit Health page with a risk result
-- Records page
-- Notifications page
-
-Example format:
-
-```md
-![Dashboard](screenshots/dashboard.png)
-![Submit Health](screenshots/submit-health.png)
-![Notifications](screenshots/notifications.png)
-```
-
 ## Deployment Notes
 
 For deployment, replace localhost values in environment variables.
