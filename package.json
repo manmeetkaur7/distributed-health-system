@@ -1,0 +1,22 @@
+{
+  "name": "distributed-health-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently -n user,health,notification,ai,frontend -c blue,green,yellow,magenta,cyan \"npm --prefix user-service run dev\" \"npm --prefix health-data-service run dev\" \"npm --prefix notification-service run dev\" \"ai-risk-service\\venv\\Scripts\\python.exe -m uvicorn main:app --reload --port 8000 --app-dir ai-risk-service\" \"npm --prefix frontend run dev -- --host 127.0.0.1\"",
+    "dev:user": "npm --prefix user-service run dev",
+    "dev:health": "npm --prefix health-data-service run dev",
+    "dev:notification": "npm --prefix notification-service run dev",
+    "dev:ai": "ai-risk-service\\venv\\Scripts\\python.exe -m uvicorn main:app --reload --port 8000 --app-dir ai-risk-service",
+    "dev:frontend": "npm --prefix frontend run dev -- --host 127.0.0.1",
+    "build:frontend": "npm --prefix frontend run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
