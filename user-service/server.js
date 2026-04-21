@@ -14,6 +14,10 @@ const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/user-servi
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({ message: 'User service is running' });
+});
+
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 

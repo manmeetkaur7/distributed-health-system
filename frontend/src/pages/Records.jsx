@@ -57,6 +57,36 @@ function Records() {
                 <dd>{record.bloodPressure}</dd>
               </div>
               <div>
+                <dt>Symptoms</dt>
+                <dd>{record.symptoms || 'Not saved'}</dd>
+              </div>
+              <div>
+                <dt>Height</dt>
+                <dd>{record.heightCm ? `${record.heightCm} cm` : 'Not saved'}</dd>
+              </div>
+              <div>
+                <dt>Weight</dt>
+                <dd>{record.weightKg ? `${record.weightKg} kg` : 'Not saved'}</dd>
+              </div>
+              <div>
+                <dt>Oxygen</dt>
+                <dd>{record.oxygenLevel ? `${record.oxygenLevel}%` : 'Not saved'}</dd>
+              </div>
+              <div>
+                <dt>Temperature</dt>
+                <dd>
+                  {record.bodyTemperature ? `${record.bodyTemperature} F` : 'Not saved'}
+                </dd>
+              </div>
+              <div>
+                <dt>Blood Sugar</dt>
+                <dd>{record.bloodSugar ? `${record.bloodSugar} mg/dL` : 'Not saved'}</dd>
+              </div>
+              <div>
+                <dt>Cholesterol</dt>
+                <dd>{record.cholesterol ? `${record.cholesterol} mg/dL` : 'Not saved'}</dd>
+              </div>
+              <div>
                 <dt>Sleep</dt>
                 <dd>{record.sleepHours} hours</dd>
               </div>
@@ -68,11 +98,42 @@ function Records() {
                 <dt>Activity</dt>
                 <dd>{record.activityLevel}</dd>
               </div>
+              <div>
+                <dt>Smoking</dt>
+                <dd>{record.smokingStatus || 'Not saved'}</dd>
+              </div>
+              <div>
+                <dt>Alcohol</dt>
+                <dd>{record.alcoholUse || 'Not saved'}</dd>
+              </div>
             </dl>
+            <RecordDetailList title="Reasons" items={record.reasons} />
+            <RecordDetailList title="Suggested Blood Tests" items={record.recommendedTests} />
+            <RecordDetailList
+              title="AI Recommendations"
+              items={record.aiRecommendations || record.suggestions}
+            />
           </article>
         ))}
       </section>
     </main>
+  )
+}
+
+function RecordDetailList({ title, items }) {
+  if (!items || items.length === 0) {
+    return null
+  }
+
+  return (
+    <section className="record-details">
+      <h3>{title}</h3>
+      <ul>
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </section>
   )
 }
 

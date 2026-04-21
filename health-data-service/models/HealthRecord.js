@@ -17,6 +17,27 @@ const healthRecordSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  symptoms: {
+    type: String,
+  },
+  heightCm: {
+    type: Number,
+  },
+  weightKg: {
+    type: Number,
+  },
+  oxygenLevel: {
+    type: Number,
+  },
+  bodyTemperature: {
+    type: Number,
+  },
+  bloodSugar: {
+    type: Number,
+  },
+  cholesterol: {
+    type: Number,
+  },
   sleepHours: {
     type: Number,
     required: true,
@@ -29,9 +50,35 @@ const healthRecordSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  smokingStatus: {
+    type: String,
+  },
+  alcoholUse: {
+    type: String,
+  },
   riskLevel: {
     type: String,
     required: true,
+  },
+  reasons: {
+    type: [String],
+    default: [],
+  },
+  suggestions: {
+    type: [String],
+    default: [],
+  },
+  aiRecommendations: {
+    type: [String],
+    default: [],
+  },
+  possibleConcerns: {
+    type: [String],
+    default: [],
+  },
+  recommendedTests: {
+    type: [String],
+    default: [],
   },
   createdAt: {
     type: Date,

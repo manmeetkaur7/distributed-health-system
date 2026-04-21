@@ -13,6 +13,10 @@ const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/health-dat
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({ message: 'Health data service is running' });
+});
+
 app.use('/api/health', healthRoutes);
 
 mongoose

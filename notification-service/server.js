@@ -13,6 +13,10 @@ const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/notificati
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({ message: 'Notification service is running' });
+});
+
 app.use('/api/notifications', notificationRoutes);
 
 mongoose
