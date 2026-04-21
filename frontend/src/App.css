@@ -296,6 +296,55 @@ button:disabled {
   font-weight: 850;
 }
 
+.risk-details,
+.record-details {
+  display: grid;
+  gap: 14px;
+}
+
+.risk-details {
+  margin-top: 24px;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #d8dee8;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(32, 40, 52, 0.08);
+}
+
+.risk-details h2,
+.risk-details h3,
+.record-details h3 {
+  margin: 0;
+  color: #102033;
+  letter-spacing: 0;
+}
+
+.risk-details h2 {
+  font-size: 24px;
+}
+
+.risk-details h3,
+.record-details h3 {
+  font-size: 17px;
+}
+
+.risk-details ul,
+.record-details ul {
+  display: grid;
+  gap: 8px;
+  margin: 8px 0 0;
+  padding-left: 20px;
+  color: #344154;
+}
+
+.medical-note {
+  padding: 12px;
+  color: #5a3e08;
+  background: #fff7df;
+  border: 1px solid #efcf7a;
+  border-radius: 8px;
+}
+
 .list {
   display: grid;
   gap: 16px;
